@@ -1,30 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="DemoUse.Installer" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="c838fc64-a406-4645-acd2-de581c7cfed9">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="*" Name="DemoUse.Installer" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="c838fc64-a406-4645-acd2-de581c7cfed9">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
 
-		<Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
+    <Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
 
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="DemoUse.Installer" />
-			</Directory>
-		</Directory>
-	</Fragment>
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="DemoUse.Installer" />
+      </Directory>
+    </Directory>
+  </Fragment>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
-		</ComponentGroup>
-	</Fragment>
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.deps.json" />
+      </Component>
+      <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\appsettings.json" />
+      </Component>
+      <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.dll" />
+      </Component>
+      <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.exe" />
+      </Component>
+            <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.pdb" />
+      </Component>
+            <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.runtimeconfig.dev.json" />
+      </Component>
+            <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.runtimeconfig.json" />
+      </Component>
+            <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.Views.dll" />
+      </Component>
+            <Component>
+        <File Source="$(var.HelloWorld.TargetDir)\HelloWorld.Views.pdb" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
 </Wix>

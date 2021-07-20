@@ -11,7 +11,7 @@
     </Feature>
   </Product>
 
-  <Fragment>                                                                                                        s
+  <Fragment>                                                                                                        
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="DemoUse.Installer">
@@ -24,142 +24,142 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <Component Id="cmpA0863526952F7834E7C922F065E4C8A8" Directory="INSTALLFOLDER" Guid="{72C7A7B7-F4D5-42CA-A311-7C6CAC8F3FCD}">
-        <File Id="filC04B02D0CCC2D5CCC1013B35DE86DB29" KeyPath="yes" Source="$(DemoHelloWorld)\appsettings.Development.json" />
+        <File Id="filC04B02D0CCC2D5CCC1013B35DE86DB29" KeyPath="yes" Source="DemoHelloWorld\appsettings.Development.json" />
       </Component>
       <Component Id="cmpF82FCA80BBAF44D285C97F10993DEEE6" Directory="INSTALLFOLDER" Guid="{9B46740E-0FE8-4F67-91D9-89F254CA5AEA}">
-        <File Id="fil840B80AC19861C7F9F04FBDCFAE331CE" KeyPath="yes" Source="$(DemoHelloWorld)\appsettings.json" />
+        <File Id="fil840B80AC19861C7F9F04FBDCFAE331CE" KeyPath="yes" Source="DemoHelloWorld\appsettings.json" />
       </Component>
       <Component Id="cmp6AACB1685536B64F83D3F03A5B238FB3" Directory="INSTALLFOLDER" Guid="{7EEB4998-C72E-4A35-B66D-39C0931F0A55}">
-        <File Id="fil0DAC9F0B7213D3D0467E209358AF1A41" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.deps.json" />
+        <File Id="fil0DAC9F0B7213D3D0467E209358AF1A41" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.deps.json" />
       </Component>
       <Component Id="cmpAF98C86D6550A6F1DF4623491E4F9287" Directory="INSTALLFOLDER" Guid="{0C12EBA5-D9FF-48F9-9D63-356642FA5BEF}">
-        <File Id="filA0ABC190738932D1DECA8312DEF9E7AE" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.dll" />
+        <File Id="filA0ABC190738932D1DECA8312DEF9E7AE" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.dll" />
       </Component>
       <Component Id="cmp0664ED639015C443993CB8969BD6448D" Directory="INSTALLFOLDER" Guid="{6C85D1F5-3B46-4FBC-9C6D-007E476D0E7D}">
-        <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.exe" />
+        <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.exe" />
       </Component>
       <Component Id="cmp18A2D87B1185AF31EEA5DEFE43B09158" Directory="INSTALLFOLDER" Guid="{3C0CDD0F-F975-472C-BB74-DC4CF11DA53C}">
-        <File Id="fil7172FE735A744F7FA860665C5E87F6BF" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.pdb" />
+        <File Id="fil7172FE735A744F7FA860665C5E87F6BF" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.pdb" />
       </Component>
       <Component Id="cmp9643CA9A32ACCA75116D33250F5F94AC" Directory="INSTALLFOLDER" Guid="{4706A461-463C-47F7-A7DE-040B5FE8F0C5}">
-        <File Id="fil08C7FD304B2BEB657F69DF2F073CEE76" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.runtimeconfig.json" />
+        <File Id="fil08C7FD304B2BEB657F69DF2F073CEE76" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.runtimeconfig.json" />
       </Component>
       <Component Id="cmpCE4BDCBF412A93AD6541252A5AE330EB" Directory="INSTALLFOLDER" Guid="{B43DFBE2-90A9-4F0D-8DB0-DEFA17449699}">
-        <File Id="fil586D7DD01A88579FE3835FC0F56363EF" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.Views.dll" />
+        <File Id="fil586D7DD01A88579FE3835FC0F56363EF" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.Views.dll" />
       </Component>
       <Component Id="cmpAB31DA980C00524130DCC4F98E8FAE68" Directory="INSTALLFOLDER" Guid="{16F40630-B318-4378-8D94-736F4554C4F5}">
-        <File Id="fil9E459F0B3E7B8C05929AA93268ECF566" KeyPath="yes" Source="$(DemoHelloWorld)\HelloWorld.Views.pdb" />
+        <File Id="fil9E459F0B3E7B8C05929AA93268ECF566" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.Views.pdb" />
       </Component>
       <Component Id="cmpB139B49DF4DF8F44C525B449EA8187F7" Directory="INSTALLFOLDER" Guid="{12A6E7E2-F047-40DE-9F27-DD6935E9CA18}">
-        <File Id="filE7A3E65CC622C2E3B9B57707B12C9645" KeyPath="yes" Source="$(DemoHelloWorld)\web.config" />
+        <File Id="filE7A3E65CC622C2E3B9B57707B12C9645" KeyPath="yes" Source="DemoHelloWorld\web.config" />
       </Component>
       <Component Id="cmp6A573805E6F545A7F37C18527646950E" Directory="dir3D83A529A2122889D4016E7D784625D5" Guid="{6BADFC04-823F-4A34-986B-7C84F84009EB}">
-        <File Id="fil4340641EF92B44F5306114E3F1D36462" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\favicon.ico" />
+        <File Id="fil4340641EF92B44F5306114E3F1D36462" KeyPath="yes" Source="DemoHelloWorld\wwwroot\favicon.ico" />
       </Component>
       <Component Id="cmp12B9D607187CDD783A1A63405FC28A2E" Directory="dirED733C34DE106D43E47F9049837C7E99" Guid="{AD483974-84CA-4E76-B525-2D418689C490}">
-        <File Id="filFC614BE10848B4F8BDFCDFF8066F8E14" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\css\site.css" />
+        <File Id="filFC614BE10848B4F8BDFCDFF8066F8E14" KeyPath="yes" Source="DemoHelloWorld\wwwroot\css\site.css" />
       </Component>
       <Component Id="cmpF796919A01BB4F3B75E73CD304AC3058" Directory="dirFA58F40E6724D998B95F259B94637964" Guid="{27AE35F5-BF46-467B-9CF6-84FF562D0A3E}">
-        <File Id="filA732A66749B01E2D1518005007DFF33F" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\js\site.js" />
+        <File Id="filA732A66749B01E2D1518005007DFF33F" KeyPath="yes" Source="DemoHelloWorld\wwwroot\js\site.js" />
       </Component>
       <Component Id="cmpD45638CB577EFFE13312C0FCB388C0C3" Directory="dirE8974B0E9FF1E04B3FB97B5FA51DFC1D" Guid="{4433A3E5-16AF-425F-B529-0D0FA4977A10}">
-        <File Id="fil53C43CB91E1284E051F10BCC7FD7E81E" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\LICENSE" />
+        <File Id="fil53C43CB91E1284E051F10BCC7FD7E81E" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\LICENSE" />
       </Component>
       <Component Id="cmpF1508FB1CED521F46FF7F86988024E1B" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{E970B340-7FF6-4579-A3DE-879CDA3C5BA9}">
-        <File Id="filA3F0C1D64E83343F8FD2CE2D160F3587" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+        <File Id="filA3F0C1D64E83343F8FD2CE2D160F3587" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
       </Component>
       <Component Id="cmp198F683FF19E56C7CE9657B14ABE59D9" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{BB1CCF0E-D41E-483B-9E45-92DC50FF60DD}">
-        <File Id="filF03E0B033761A003A5528D3536986F16" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+        <File Id="filF03E0B033761A003A5528D3536986F16" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
       </Component>
       <Component Id="cmpAFE25004075E3D795B19C71730E20C43" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{BB25F45A-474F-486F-8884-B980B585C994}">
-        <File Id="fil8057472263264E85527F66C4039220A8" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+        <File Id="fil8057472263264E85527F66C4039220A8" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
       </Component>
       <Component Id="cmp57CA88F2E3F8EACB70713B337787E11F" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{7D03F6E9-AF71-40AC-9A4D-B3D819654025}">
-        <File Id="filCD6A4F8097FE927A82402AAD9EDE3B60" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+        <File Id="filCD6A4F8097FE927A82402AAD9EDE3B60" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
       </Component>
       <Component Id="cmpEB2822A567D210C9959F9AEB8FEBEFAC" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{218BB889-F48C-4CA6-AF49-9B0DA808EEB4}">
-        <File Id="filBBFD2756A2A3B3DC6075DAB13C59AEB3" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+        <File Id="filBBFD2756A2A3B3DC6075DAB13C59AEB3" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
       </Component>
       <Component Id="cmpB9E711A0457CC0C1235BD8CE8F2F90CA" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{A8DADC3A-5F29-4E88-9843-165088787D75}">
-        <File Id="filEC3998AE82F3265BCC124135126A9A7D" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+        <File Id="filEC3998AE82F3265BCC124135126A9A7D" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
       </Component>
       <Component Id="cmp849BBE3BD9FA3F3EE8397766B362DAE5" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{5A0D5FE7-96DB-4FF4-B697-233F7450FFFA}">
-        <File Id="fil795CE446845222FD9F60A2B5B56428F3" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+        <File Id="fil795CE446845222FD9F60A2B5B56428F3" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
       </Component>
       <Component Id="cmp75FCB545884EA29492C0BFCAE9387094" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{9C9489AE-ADEE-4FDD-BB3C-A9046FAED78E}">
-        <File Id="filC1A81100F4EDD13ACA0679DBB1535B71" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+        <File Id="filC1A81100F4EDD13ACA0679DBB1535B71" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
       </Component>
       <Component Id="cmpCFEAFD5B1BED0635295A3218C2BCC1B6" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{6AC79561-F1C4-4D28-9A87-30E56AF3ACA6}">
-        <File Id="fil9F238EF32DA8366B8672FFCDED87B3AF" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+        <File Id="fil9F238EF32DA8366B8672FFCDED87B3AF" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
       </Component>
       <Component Id="cmp50220C1160DFB99416BFE3AEAD636ABB" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{206582B3-4A80-4EF6-B95F-496109BB0547}">
-        <File Id="fil2752C5F38824DA49A7A8E9508FFCDEDA" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+        <File Id="fil2752C5F38824DA49A7A8E9508FFCDEDA" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
       </Component>
       <Component Id="cmp482924B6A36354F67FB7975DB65443EB" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{81552728-0494-481C-ACCF-418494ED9438}">
-        <File Id="filAFD8E931C620F4E75441A56E2B1756AB" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+        <File Id="filAFD8E931C620F4E75441A56E2B1756AB" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
       </Component>
       <Component Id="cmpF47B69A6298B9390BD1AF2902E1DF13D" Directory="dirB1E57672304271436EB520F48D9CEEBE" Guid="{FB7D62BD-3DDC-45F2-81BC-41BDC45A625E}">
-        <File Id="fil01EE55BA932A69537A91F99A8325F5D2" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+        <File Id="fil01EE55BA932A69537A91F99A8325F5D2" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
       </Component>
       <Component Id="cmpE20FEE36C4811633853EC9536F7BD6A1" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{51186C16-DF93-4E4B-921E-FDD757200692}">
-        <File Id="fil983CADCCD61C8ECCC8BBB7243F009BBB" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+        <File Id="fil983CADCCD61C8ECCC8BBB7243F009BBB" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
       </Component>
       <Component Id="cmp7D46170E7AAAA8BDABC239C3F663295E" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{6E6CB588-1589-4ABD-8131-01401E9F67DB}">
-        <File Id="fil8ADB3E3A40EAE54C803A5E0281306502" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+        <File Id="fil8ADB3E3A40EAE54C803A5E0281306502" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
       </Component>
       <Component Id="cmp2413C9D5B0968B72BAF3919696C71520" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{F1B5F3E2-3EF3-474E-9DC2-1C3B5976591D}">
-        <File Id="filB4B18C34F68CDAC3B6C891094BE2EFFD" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+        <File Id="filB4B18C34F68CDAC3B6C891094BE2EFFD" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
       </Component>
       <Component Id="cmp712EBD4DA2A1F1F52D2686DB2370C686" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{15DE7BCA-2E5F-4E94-B925-375E1B4E1016}">
-        <File Id="filD3C995C3B449E215C839E29D341222A3" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+        <File Id="filD3C995C3B449E215C839E29D341222A3" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
       </Component>
       <Component Id="cmpD8F47627D4E3776D63519AA6A2B7C088" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{8EE37FE7-266E-428C-9C98-B1C111256187}">
-        <File Id="fil5A8815381748CF66D6784A8866854EF4" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+        <File Id="fil5A8815381748CF66D6784A8866854EF4" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
       </Component>
       <Component Id="cmp5966B2D2FF6E0E5B0AFF6E3D5FF90D3D" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{B527208A-2F18-471E-9E19-0B223B7DD736}">
-        <File Id="fil79A122D3908D5DA80701170CF1800A87" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+        <File Id="fil79A122D3908D5DA80701170CF1800A87" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
       </Component>
       <Component Id="cmpDB932D7B263940454C814AB2B2F641C9" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{FD4BED72-45D6-4C7B-A4AC-859205438D1A}">
-        <File Id="fil673A44B9CD2CE406913AF98E1CF333DD" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+        <File Id="fil673A44B9CD2CE406913AF98E1CF333DD" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
       </Component>
       <Component Id="cmpFCD02416D065F7F82DAF5A035C39824F" Directory="dir37C1713A8BD36DC432AF5EF6883E127D" Guid="{88C2EE8F-4AF6-49FD-BEFE-23423D0FCD0A}">
-        <File Id="fil2EAE24B34A8695BF6752AFDA85BE38BA" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+        <File Id="fil2EAE24B34A8695BF6752AFDA85BE38BA" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
       </Component>
       <Component Id="cmpC4A1CA0B6569A317F1E07D84DD8DA70B" Directory="dir213EE5C7E870C2065AFDCA70B55604CC" Guid="{23F8468F-430B-41DC-99D3-CFFDA6FB122C}">
-        <File Id="filAC8D5C234B9AE2978A24E8FEB61D89DF" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery\LICENSE.txt" />
+        <File Id="filAC8D5C234B9AE2978A24E8FEB61D89DF" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery\LICENSE.txt" />
       </Component>
       <Component Id="cmp9831E2660CE1C27BCEACEE557487D9CA" Directory="dirB7B7760E1E5245F05DEDC31D604BB29B" Guid="{1F1AD583-9D6C-4BC4-9EBD-E7B4B1EE5494}">
-        <File Id="filE14024869F26D48EA967B9382934F695" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery\dist\jquery.js" />
+        <File Id="filE14024869F26D48EA967B9382934F695" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.js" />
       </Component>
       <Component Id="cmp2392FA28B5C1165F7129D76B55573E1A" Directory="dirB7B7760E1E5245F05DEDC31D604BB29B" Guid="{E9D8CEB0-83C8-4221-B876-9A3E23307B82}">
-        <File Id="filD88F8E654E70C2320004AE4EABB94F81" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery\dist\jquery.min.js" />
+        <File Id="filD88F8E654E70C2320004AE4EABB94F81" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.js" />
       </Component>
       <Component Id="cmp5E8310C72A4EE2106073F78CBB8C9AFB" Directory="dirB7B7760E1E5245F05DEDC31D604BB29B" Guid="{91E9999E-0253-406E-9BEE-292DA44DBA5E}">
-        <File Id="fil29A314F0795551B26C967B719117B4C0" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery\dist\jquery.min.map" />
+        <File Id="fil29A314F0795551B26C967B719117B4C0" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.map" />
       </Component>
       <Component Id="cmp978E4C13010125E310928FE0AD90F41D" Directory="dir2A52A3533741675585C17B43E6D148C0" Guid="{C92C2D82-BB8C-42FE-B4F1-A1B2E148DE5C}">
-        <File Id="fil3A43B7D6169A855A76876309AF54100F" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation\LICENSE.md" />
+        <File Id="fil3A43B7D6169A855A76876309AF54100F" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation\LICENSE.md" />
       </Component>
       <Component Id="cmp8A75EC2D0F03EF8DAA90C6F40CD14C1C" Directory="dir311C96856433AC7F773B1EABF869025E" Guid="{ABC44D68-2B7A-4B67-A676-D243186D192F}">
-        <File Id="fil4481E8AA9401026A1C628325D17EB047" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+        <File Id="fil4481E8AA9401026A1C628325D17EB047" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
       </Component>
       <Component Id="cmpAE48BDE5331361E52516AB91C9BA5D8F" Directory="dir311C96856433AC7F773B1EABF869025E" Guid="{4C838CE2-A4F3-4B62-94A8-68E9305ABD0F}">
-        <File Id="filE3C6F6986B34B200D73FFEA5C785D095" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+        <File Id="filE3C6F6986B34B200D73FFEA5C785D095" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
       </Component>
       <Component Id="cmp409FDCECB40543A8F00FDFCDFBB30274" Directory="dir311C96856433AC7F773B1EABF869025E" Guid="{E55787E2-B7D7-4601-8D8C-40CF2AB11F1C}">
-        <File Id="fil94DAE3EBA4EB48E3757FE08537F7C1DE" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+        <File Id="fil94DAE3EBA4EB48E3757FE08537F7C1DE" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
       </Component>
       <Component Id="cmp4C0DCBF1A9CF5075B69DDBE2205D980A" Directory="dir311C96856433AC7F773B1EABF869025E" Guid="{40601685-AE32-45E1-B585-E6F89C8A6AB8}">
-        <File Id="fil0C5283B1D599C5FD5941B0768DE3B97E" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+        <File Id="fil0C5283B1D599C5FD5941B0768DE3B97E" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
       </Component>
       <Component Id="cmp16F5C603416771D7DE966B331AFDA159" Directory="dir95E51D1FD73BF1361B42C532D6572D2E" Guid="{A3F577A8-26D2-4A97-A7BA-80504A222C44}">
-        <File Id="fil5B6D29F45F7576151074F1216EA6F568" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+        <File Id="fil5B6D29F45F7576151074F1216EA6F568" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
       </Component>
       <Component Id="cmpB31A4AF24D148665C13566899C4A146F" Directory="dir95E51D1FD73BF1361B42C532D6572D2E" Guid="{AD4FE92C-1C83-4D16-8D16-DEBC059D5470}">
-        <File Id="filA93DAD88B4E58A2D1B7B1CC62738B2C7" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+        <File Id="filA93DAD88B4E58A2D1B7B1CC62738B2C7" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
       </Component>
       <Component Id="cmpB4F63F3D836084F12B1378ED6F4D57B8" Directory="dir95E51D1FD73BF1361B42C532D6572D2E" Guid="{EDFC3CF0-F588-40E7-9A0A-1C2F48073FFD}">
-        <File Id="fil7E929A59EE39F4F659192B58714A2DC9" KeyPath="yes" Source="$(DemoHelloWorld)\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+        <File Id="fil7E929A59EE39F4F659192B58714A2DC9" KeyPath="yes" Source="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
       </Component>
     </ComponentGroup>
   </Fragment>

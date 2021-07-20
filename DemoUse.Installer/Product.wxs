@@ -38,17 +38,11 @@
       <Component Id="cmp0664ED639015C443993CB8969BD6448D" Directory="INSTALLFOLDER" Guid="{6C85D1F5-3B46-4FBC-9C6D-007E476D0E7D}">
         <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.exe" />
       </Component>
-      <Component Id="cmp18A2D87B1185AF31EEA5DEFE43B09158" Directory="INSTALLFOLDER" Guid="{3C0CDD0F-F975-472C-BB74-DC4CF11DA53C}">
-        <File Id="fil7172FE735A744F7FA860665C5E87F6BF" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.pdb" />
-      </Component>
       <Component Id="cmp9643CA9A32ACCA75116D33250F5F94AC" Directory="INSTALLFOLDER" Guid="{4706A461-463C-47F7-A7DE-040B5FE8F0C5}">
         <File Id="fil08C7FD304B2BEB657F69DF2F073CEE76" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.runtimeconfig.json" />
       </Component>
       <Component Id="cmpCE4BDCBF412A93AD6541252A5AE330EB" Directory="INSTALLFOLDER" Guid="{B43DFBE2-90A9-4F0D-8DB0-DEFA17449699}">
         <File Id="fil586D7DD01A88579FE3835FC0F56363EF" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.Views.dll" />
-      </Component>
-      <Component Id="cmpAB31DA980C00524130DCC4F98E8FAE68" Directory="INSTALLFOLDER" Guid="{16F40630-B318-4378-8D94-736F4554C4F5}">
-        <File Id="fil9E459F0B3E7B8C05929AA93268ECF566" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.Views.pdb" />
       </Component>
       <Component Id="cmpB139B49DF4DF8F44C525B449EA8187F7" Directory="INSTALLFOLDER" Guid="{12A6E7E2-F047-40DE-9F27-DD6935E9CA18}">
         <File Id="filE7A3E65CC622C2E3B9B57707B12C9645" KeyPath="yes" Source="DemoHelloWorld\web.config" />

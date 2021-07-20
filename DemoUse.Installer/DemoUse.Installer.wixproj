@@ -21,6 +21,70 @@
   <ItemGroup>
     <Compile Include="Product.wxs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DemoHelloWorld\" />
+    <Folder Include="DemoHelloWorld\wwwroot\" />
+    <Folder Include="DemoHelloWorld\wwwroot\css\" />
+    <Folder Include="DemoHelloWorld\wwwroot\js\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\bootstrap\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\jquery-validation\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\jquery\" />
+    <Folder Include="DemoHelloWorld\wwwroot\lib\jquery\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DemoHelloWorld\appsettings.Development.json" />
+    <Content Include="DemoHelloWorld\appsettings.json" />
+    <Content Include="DemoHelloWorld\HelloWorld.deps.json" />
+    <Content Include="DemoHelloWorld\HelloWorld.dll" />
+    <Content Include="DemoHelloWorld\HelloWorld.exe" />
+    <Content Include="DemoHelloWorld\HelloWorld.pdb" />
+    <Content Include="DemoHelloWorld\HelloWorld.runtimeconfig.json" />
+    <Content Include="DemoHelloWorld\HelloWorld.Views.dll" />
+    <Content Include="DemoHelloWorld\HelloWorld.Views.pdb" />
+    <Content Include="DemoHelloWorld\web.config" />
+    <Content Include="DemoHelloWorld\wwwroot\css\site.css" />
+    <Content Include="DemoHelloWorld\wwwroot\favicon.ico" />
+    <Content Include="DemoHelloWorld\wwwroot\js\site.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\bootstrap\LICENSE" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery-validation\LICENSE.md" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.js" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.map" />
+    <Content Include="DemoHelloWorld\wwwroot\lib\jquery\LICENSE.txt" />
+  </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
   <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">

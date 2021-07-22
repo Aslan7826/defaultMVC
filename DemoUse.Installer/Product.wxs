@@ -10,7 +10,9 @@
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
     
-    <UI> <UIRef Id="WixUI_Minimal" /></UI>
+    <UI> <UIRef Id="WixUI_InstallDir" /></UI>
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
   </Product>
 
   <Fragment>                                                                                                        

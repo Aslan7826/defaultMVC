@@ -10,9 +10,7 @@
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
     
-    <UI> <UIRef Id="WixUI_Advanced" /></UI>
-    <Property Id="ApplicationFolderName" Value="My Application Folder" />
-    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
+    <UI> <UIRef Id="WixUI_Minimal" /></UI>
   </Product>
 
   <Fragment>                                                                                                        

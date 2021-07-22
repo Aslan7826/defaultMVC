@@ -36,6 +36,7 @@
     <Folder Include="DemoHelloWorld\wwwroot\lib\jquery-validation\dist\" />
     <Folder Include="DemoHelloWorld\wwwroot\lib\jquery\" />
     <Folder Include="DemoHelloWorld\wwwroot\lib\jquery\dist\" />
+    <Folder Include="DLL" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DemoHelloWorld\appsettings.Development.json" />
@@ -84,6 +85,13 @@
     <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.js" />
     <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.map" />
     <Content Include="DemoHelloWorld\wwwroot\lib\jquery\LICENSE.txt" />
+    <Content Include="DLL\WixUIExtension.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>DLL\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />

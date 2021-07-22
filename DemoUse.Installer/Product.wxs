@@ -5,10 +5,14 @@
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate />
-
+    
     <Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
+    
+    <UI> <UIRef Id="WixUI_Advanced" /></UI>
+    <Property Id="ApplicationFolderName" Value="My Application Folder" />
+    <Property Id="WixAppFolder" Value="WixPerMachineFolder" />
   </Product>
 
   <Fragment>                                                                                                        

@@ -68,7 +68,12 @@
 
     <UIRef Id="WixUI_Common" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
-
+    <!--自訂動作 SettingDlg.wxs-->
+    <Binary Id='SettingCADLL' SourceFile='$(var.DemoUse.CustomAction.TargetDir)/DemoUse.CustomAction.CA.dll' />
+    <CustomAction Id="SetURL" BinaryKey="SettingCADLL" DllEntry="SetCustomAction" Execute="immediate" Return="check" />
+    <InstallExecuteSequence>
+      <Custom Action="SetURL" After="InstallFinalize" Overridable="yes">NOT Installed</Custom>
+    </InstallExecuteSequence>
   </Product>
 
   <Fragment>

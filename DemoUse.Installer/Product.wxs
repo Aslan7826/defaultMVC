@@ -8,6 +8,7 @@
 
     <Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="cmpB59C44B238E764B86C6DFC0A8045E3FA" />
     </Feature>
 
     <UI Id="WixUI_InstallDir">
@@ -80,6 +81,14 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="DemoUse.Installer">
+        <!--資料夾權限-->
+        <Component Id="cmpB59C44B238E764B86C6DFC0A8045E3FA" Guid='BDAA4089-F7C0-42E8-928E-B81901938FCD' >
+          <CreateFolder Directory="INSTALLFOLDER">
+            <Permission User="SYSTEM" GenericAll="yes"/>
+            <Permission User="EveryOne" GenericAll="yes"  GenericRead="yes" Read="yes" ReadAttributes="yes"  GenericExecute="yes" TakeOwnership ="yes"  GenericWrite ="yes"    WriteAttributes="yes" ReadPermission ="yes"   ChangePermission="yes" />
+            <Permission User="Users" Domain="[LOCAL_MACHINE_NAME]"  GenericRead="yes" Read="yes" ReadAttributes="yes"  GenericExecute="yes" TakeOwnership ="yes"  GenericWrite ="yes"    WriteAttributes="yes" ReadPermission ="yes"   ChangePermission="yes"/>
+          </CreateFolder>
+        </Component>
           <Directory Id="dir3D83A529A2122889D4016E7D784625D5" Name="wwwroot" />
         </Directory>
       </Directory>

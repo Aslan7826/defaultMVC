@@ -9,6 +9,7 @@
     <Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="cmpB59C44B238E764B86C6DFC0A8045E3FA" />
+      <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448D" />
     </Feature>
 
     <UI Id="WixUI_InstallDir">
@@ -80,7 +81,6 @@
       <Custom Action="SetURL" After="InstallFinalize" Overridable="yes">NOT Installed</Custom>
     </InstallExecuteSequence>
   </Product>
-
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
@@ -99,7 +99,24 @@
       </Directory>
     </Directory>
   </Fragment>
-
+  
+    <Fragment>
+    <Component Id="cmp0664ED639015C443993CB8969BD6448D" Directory="INSTALLFOLDER" Guid="{6C85D1F5-3B46-4FBC-9C6D-007E476D0E7D}">
+      <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" DiskId="1" Vital="yes" Source="DemoHelloWorld\HelloWorld.exe"/>
+      <ServiceInstall Id="HelloWorldInstaller" Name="HelloWorld"
+                      DisplayName="Aslan demo use HelloWorld" Description="demo use"
+                      Type="ownProcess" Vital="yes"
+                      Start="auto"
+                      ErrorControl="normal"
+                      Account="LocalSystem"
+                      Arguments="-start"
+                      Interactive="no" />
+      <ServiceControl Id="StartHelloWorldService" Name="HelloWorld"
+                      Stop="both" Remove="uninstall"
+                      Wait="yes" />
+    </Component>
+  </Fragment>
+  
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <Component Id="cmpA0863526952F7834E7C922F065E4C8A8" Directory="INSTALLFOLDER" Guid="{42B5661D-BFCB-4CB2-B9C3-E751952DD237}">
@@ -113,9 +130,6 @@
       </Component>
       <Component Id="cmpAF98C86D6550A6F1DF4623491E4F9287" Directory="INSTALLFOLDER" Guid="{C4D2FD3A-589E-4BA7-979E-3BB330A35F48}">
         <File Id="filA0ABC190738932D1DECA8312DEF9E7AE" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.dll" />
-      </Component>
-      <Component Id="cmp0664ED639015C443993CB8969BD6448D" Directory="INSTALLFOLDER" Guid="{101BEDB7-C580-439B-875F-D2F664CCFA0F}">
-        <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.exe" />
       </Component>
       <Component Id="cmp18A2D87B1185AF31EEA5DEFE43B09158" Directory="INSTALLFOLDER" Guid="{FDB636AA-CDC4-43A2-9100-08AF4E79EFF5}">
         <File Id="fil7172FE735A744F7FA860665C5E87F6BF" KeyPath="yes" Source="DemoHelloWorld\HelloWorld.pdb" />

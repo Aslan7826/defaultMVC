@@ -72,6 +72,10 @@
     <!--自訂動作 SettingDlg.wxs-->
     <Binary Id='SettingCADLL' SourceFile='$(var.DemoUse.CustomAction.TargetDir)/DemoUse.CustomAction.CA.dll' />
     <CustomAction Id="SetURL" BinaryKey="SettingCADLL" DllEntry="SetCustomAction" Execute="immediate" Return="check" />
+    <CustomAction Id="GetIP" BinaryKey="SettingCADLL" DllEntry="GetThisIP" Execute="immediate" Return="check" />
+    <InstallUISequence>
+      <Custom Action="GetIP"  After="LaunchConditions" Overridable="yes">NOT Installed</Custom>
+    </InstallUISequence>
     <InstallExecuteSequence>
       <Custom Action="SetURL" After="InstallFinalize" Overridable="yes">NOT Installed</Custom>
     </InstallExecuteSequence>

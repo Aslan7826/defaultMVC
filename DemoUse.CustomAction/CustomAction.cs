@@ -4,6 +4,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace DemoUse.CustomAction
@@ -28,5 +30,18 @@ namespace DemoUse.CustomAction
 
             return ActionResult.Success;
         }
+
+        [CustomAction]
+        public static ActionResult GetThisIP(Session session) 
+        {
+            string name = Dns.GetHostName();
+            var ip = Dns.GetHostEntry(name).AddressList
+                    .ToList()
+                    .Where(o => o.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork && !o.ToString().EndsWith(".1"))
+                    .FirstOrDefault()?.ToString() ?? "127.0.0.1";
+            session["SYSTEMIP"] = ip;
+            return ActionResult.Success;
+        }
+
     }
 }

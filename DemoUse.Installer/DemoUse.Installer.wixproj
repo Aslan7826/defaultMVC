@@ -24,6 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DemoHelloWorld\" />
+    <Folder Include="DemoHelloWorld\runtimes\" />
+    <Folder Include="DemoHelloWorld\runtimes\win\" />
+    <Folder Include="DemoHelloWorld\runtimes\win\lib\" />
+    <Folder Include="DemoHelloWorld\runtimes\win\lib\netstandard2.0\" />
     <Folder Include="DemoHelloWorld\wwwroot\" />
     <Folder Include="DemoHelloWorld\wwwroot\css\" />
     <Folder Include="DemoHelloWorld\wwwroot\js\" />
@@ -49,6 +53,9 @@
     <Content Include="DemoHelloWorld\HelloWorld.runtimeconfig.json" />
     <Content Include="DemoHelloWorld\HelloWorld.Views.dll" />
     <Content Include="DemoHelloWorld\HelloWorld.Views.pdb" />
+    <Content Include="DemoHelloWorld\Microsoft.Extensions.Hosting.WindowsServices.dll" />
+    <Content Include="DemoHelloWorld\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll" />
+    <Content Include="DemoHelloWorld\System.ServiceProcess.ServiceController.dll" />
     <Content Include="DemoHelloWorld\web.config" />
     <Content Include="DemoHelloWorld\wwwroot\css\site.css" />
     <Content Include="DemoHelloWorld\wwwroot\favicon.ico" />

@@ -80,6 +80,7 @@
     <InstallExecuteSequence>
       <Custom Action="SetURL" After="InstallFinalize" Overridable="yes">NOT Installed</Custom>
     </InstallExecuteSequence>
+     <Icon Id="WixToolsetIcon" SourceFile="Icon\wixtoolset.org.ico" />
   </Product>
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">

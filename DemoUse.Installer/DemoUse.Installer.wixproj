@@ -95,9 +95,14 @@
     <Content Include="DemoHelloWorld\wwwroot\lib\jquery\dist\jquery.min.map" />
     <Content Include="DemoHelloWorld\wwwroot\lib\jquery\LICENSE.txt" />
     <Content Include="DLL\WixUIExtension.dll" />
+    <Content Include="DLL\WixUtilExtension.dll" />
     <Content Include="Icon\wixtoolset.org.ico" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>DLL\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
     <WixExtension Include="WixUIExtension">
       <HintPath>DLL\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>

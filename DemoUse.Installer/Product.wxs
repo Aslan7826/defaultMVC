@@ -106,7 +106,8 @@
           <Component Id="ApplicationShortcut" Guid="5A254682-DD5F-453D-8333-144457282026">
             <util:InternetShortcut Id="MenuIndex"
                       Name="HelloWorld"
-                      Target="http://[SYSTEMIP]:[WEBPORT]/index.html"/>
+                      Target="http://[SYSTEMIP]:[WEBPORT]/index.html"
+                      IconFile="[INSTALLFOLDER]\wixtoolset.org.ico"/>
             <Shortcut Id="UninstallProduct"
                 Name="Uninstall"
                 Description="Uninstalls My HelloWorld"

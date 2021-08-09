@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <Product Id="*" Name="DemoUse.Installer" Language="1033" Version="1.0.0.0" Manufacturer="Demo" UpgradeCode="c838fc64-a406-4645-acd2-de581c7cfed9">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
@@ -10,6 +10,7 @@
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="cmpB59C44B238E764B86C6DFC0A8045E3FA" />
       <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448D" />
+      <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448E"/>
       <ComponentRef Id="DesktopFolderShortcut" />
     </Feature>
 
@@ -88,6 +89,10 @@
        <!--桌面捷徑-->
       <Directory Id="DesktopFolder" Name="Desktop" >
         <Component Id="DesktopFolderShortcut" Guid="{1266FD2F-3EE5-4C8D-BFC2-AD99AE8B8E0C}">
+          <util:InternetShortcut Id="OnlineDocumentationShortcut" 
+                                 Name="WixToolsetHtml" 
+                                 Target="http://[SYSTEMIP]:[WEBPORT]/index.html" 
+                                 IconFile="[INSTALLFOLDER]\wixtoolset.org.ico"/>
           <Shortcut Id="DesktopShortcut" Directory="DesktopFolder"  Name="HelloWorldExe" Target="[INSTALLFOLDER]HelloWorld.exe"  WorkingDirectory="INSTALLFOLDER" Icon="WixToolsetIcon">
           </Shortcut>
           <RegistryValue Root="HKCU" Key="Software\Microsoft\HelloWorld" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
@@ -111,6 +116,7 @@
   </Fragment>
 
   <Fragment>
+    <!--背景服務-->
     <Component Id="cmp0664ED639015C443993CB8969BD6448D" Directory="INSTALLFOLDER" Guid="{6C85D1F5-3B46-4FBC-9C6D-007E476D0E7D}">
       <File Id="filA5D6E0AECC10963EACFBDD58A3762306" KeyPath="yes" DiskId="1" Vital="yes" Source="DemoHelloWorld\HelloWorld.exe"/>
       <ServiceInstall Id="HelloWorldInstaller" Name="HelloWorld"
@@ -124,6 +130,10 @@
       <ServiceControl Id="StartHelloWorldService" Name="HelloWorld"
                       Stop="both" Remove="uninstall"
                       Wait="yes" />
+    </Component>
+    <!--Icon-->
+    <Component Id="cmp0664ED639015C443993CB8969BD6448E" Directory="INSTALLFOLDER"  Guid="{118A8D16-32ED-4846-910E-D188686C8654}">
+        <File Id="filA5D6E0AECC10963EACFBDD58A3762307" KeyPath="yes" DiskId="1" Vital="yes" Source="Icon\wixtoolset.org.ico"/>
     </Component>
   </Fragment>
 

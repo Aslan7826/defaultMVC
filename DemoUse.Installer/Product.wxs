@@ -12,6 +12,7 @@
       <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448D" />
       <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448E"/>
       <ComponentRef Id="DesktopFolderShortcut" />
+      <ComponentRef Id="ApplicationShortcut"/>
     </Feature>
 
     <UI Id="WixUI_InstallDir">
@@ -86,18 +87,38 @@
   </Product>
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
-       <!--桌面捷徑-->
+      <!--桌面捷徑-->
       <Directory Id="DesktopFolder" Name="Desktop" >
         <Component Id="DesktopFolderShortcut" Guid="{1266FD2F-3EE5-4C8D-BFC2-AD99AE8B8E0C}">
-          <util:InternetShortcut Id="OnlineDocumentationShortcut" 
-                                 Name="WixToolsetHtml" 
-                                 Target="http://[SYSTEMIP]:[WEBPORT]/index.html" 
+          <util:InternetShortcut Id="OnlineDocumentationShortcut"
+                                 Name="WixToolsetHtml"
+                                 Target="http://[SYSTEMIP]:[WEBPORT]/index.html"
                                  IconFile="[INSTALLFOLDER]\wixtoolset.org.ico"/>
           <Shortcut Id="DesktopShortcut" Directory="DesktopFolder"  Name="HelloWorldExe" Target="[INSTALLFOLDER]HelloWorld.exe"  WorkingDirectory="INSTALLFOLDER" Icon="WixToolsetIcon">
           </Shortcut>
           <RegistryValue Root="HKCU" Key="Software\Microsoft\HelloWorld" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
         </Component>
       </Directory>
+
+      <!--建立WindowsMenu資料-->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Hello">
+          <Component Id="ApplicationShortcut" Guid="5A254682-DD5F-453D-8333-144457282026">
+            <util:InternetShortcut Id="MenuIndex"
+                      Name="HelloWorld"
+                      Target="http://[SYSTEMIP]:[WEBPORT]/index.html"/>
+            <Shortcut Id="UninstallProduct"
+                Name="Uninstall"
+                Description="Uninstalls My HelloWorld"
+                Target="[SystemFolder]msiexec.exe"
+                Arguments="/x [ProductCode]"/>
+            <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+            <RegistryValue Root="HKCU" Key="Software\Microsoft\HelloWorldMenu" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+          </Component>
+        </Directory>
+      </Directory>
+
+
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="DemoUse.Installer">
           <!--資料夾權限-->
@@ -133,7 +154,7 @@
     </Component>
     <!--Icon-->
     <Component Id="cmp0664ED639015C443993CB8969BD6448E" Directory="INSTALLFOLDER"  Guid="{118A8D16-32ED-4846-910E-D188686C8654}">
-        <File Id="filA5D6E0AECC10963EACFBDD58A3762307" KeyPath="yes" DiskId="1" Vital="yes" Source="Icon\wixtoolset.org.ico"/>
+      <File Id="filA5D6E0AECC10963EACFBDD58A3762307" KeyPath="yes" DiskId="1" Vital="yes" Source="Icon\wixtoolset.org.ico"/>
     </Component>
   </Fragment>
 

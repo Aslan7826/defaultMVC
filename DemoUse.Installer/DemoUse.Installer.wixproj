@@ -13,6 +13,8 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
     <DefineConstants>Debug</DefineConstants>
+    <LinkerAdditionalOptions>
+    </LinkerAdditionalOptions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -43,6 +45,7 @@
     <Folder Include="DemoHelloWorld\wwwroot\lib\jquery\dist\" />
     <Folder Include="DLL" />
     <Folder Include="Icon" />
+    <Folder Include="Image" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DemoHelloWorld\appsettings.Development.json" />
@@ -97,6 +100,8 @@
     <Content Include="DLL\WixUIExtension.dll" />
     <Content Include="DLL\WixUtilExtension.dll" />
     <Content Include="Icon\wixtoolset.org.ico" />
+    <Content Include="Image\BigPix.bmp" />
+    <Content Include="Image\Pix.bmp" />
   </ItemGroup>
   <ItemGroup>
     <WixExtension Include="WixUtilExtension">

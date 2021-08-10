@@ -3,7 +3,7 @@
   <Fragment>
     <UI>
       <Dialog Id="SettingDlg" Width="370" Height="270" Title="System Setting">
-        <Control X="0"   Y="0"   Id="BannerBitmap" Type="Bitmap" Width="370" Height="44" TabSkip="no" Text="!(loc.WelcomeDlgBitmap)" />
+        <Control X="0"   Y="0"   Id="BannerBitmap" Type="Bitmap" Width="370" Height="44" TabSkip="no" Text="!(loc.InstallDirDlgBannerBitmap)" />
         <Control X="0"   Y="44"  Id="BannerLine" Type="Line" Width="370" Height="0" />
         <Control X="15"  Y="6"   Id="Title" Type="Text"  Width="200" Height="15" Transparent="yes" NoPrefix="yes" Text="Set System URL" />
         <Control X="25"  Y="50"  Id="Description" Type="Text" Width="340" Height="15" Transparent="yes" NoPrefix="yes" Text="Input Your Setting" />

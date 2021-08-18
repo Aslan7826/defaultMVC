@@ -162,6 +162,14 @@
       <File Id="filA5D6E0AECC10963EACFBDD58A3762307" KeyPath="yes" DiskId="1" Vital="yes" Source="Icon\wixtoolset.org.ico"/>
     </Component>
   </Fragment>
+  <!--版本更新-->
+  <Fragment>
+    <Upgrade Id="c838fc64-a406-4645-acd2-de581c7cfed9">
+       <UpgradeVersion OnlyDetect="no" Property="PREVIOUSFOUND" 
+          Minimum="1.0.0.0" IncludeMinimum="yes" 
+          Maximum="$(var.Version)" IncludeMaximum="no" />
+    </Upgrade>
+  </Fragment>
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <Component Id="cmpA0863526952F7834E7C922F065E4C8A8" Directory="INSTALLFOLDER" Guid="{42B5661D-BFCB-4CB2-B9C3-E751952DD237}">

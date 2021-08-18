@@ -87,7 +87,8 @@
     <!--打包用的圖片-->
     <WixVariable Id="WixUIDialogBmp" Value="Image\BigPix.bmp"/>
     <WixVariable Id="WixUIBannerBmp" Value="Image\Pix.bmp"/>
-
+    <!--系統授權書-->
+    <WixVariable Id="WixUILicenseRtf" Value="AuthorizationFile.rtf" />
   </Product>
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">

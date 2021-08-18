@@ -47,6 +47,7 @@
     <Folder Include="Image" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AuthorizationFile.rtf" />
     <Content Include="DemoHelloWorld\appsettings.Development.json" />
     <Content Include="DemoHelloWorld\appsettings.json" />
     <Content Include="DemoHelloWorld\HelloWorld.deps.json" />

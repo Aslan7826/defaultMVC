@@ -9,6 +9,8 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "DemoUse.Installer", "DemoUs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoUse.CustomAction", "DemoUse.CustomAction\DemoUse.CustomAction.csproj", "{693E92B8-9732-49E9-AEA0-5A1173AF024E}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "DemoUse.Bootstrapper", "DemoUse.Bootstrapper\DemoUse.Bootstrapper.wixproj", "{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,12 @@ Global
 		{693E92B8-9732-49E9-AEA0-5A1173AF024E}.Release|Any CPU.ActiveCfg = Release|x86
 		{693E92B8-9732-49E9-AEA0-5A1173AF024E}.Release|x86.ActiveCfg = Release|x86
 		{693E92B8-9732-49E9-AEA0-5A1173AF024E}.Release|x86.Build.0 = Release|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Debug|x86.ActiveCfg = Debug|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Debug|x86.Build.0 = Debug|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Release|Any CPU.ActiveCfg = Release|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Release|x86.ActiveCfg = Release|x86
+		{37BBFD2F-0889-4B32-90DB-EEA5CBEA61CE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

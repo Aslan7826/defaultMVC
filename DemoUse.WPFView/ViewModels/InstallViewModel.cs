@@ -376,7 +376,7 @@ namespace DemoUse.WPFView.ViewModels
                     {
                         CustomBootstrapperApplication.Dispatcher.Invoke((Action)delegate()
                         {
-                            MessageBox.Show(message, "DIAView", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show(message, "DemoInstaller", MessageBoxButton.OK, MessageBoxImage.Error);
                             if (null != CustomBootstrapperApplication.View)
                             {
                                 CustomBootstrapperApplication.View.Close();
@@ -430,8 +430,8 @@ namespace DemoUse.WPFView.ViewModels
         protected void DetectPackageComplete(object sender, DetectPackageCompleteEventArgs e)
         {
             PackageId = e.PackageId;
-            //对应的是MsiPackage Id="DIAView"
-            if (e.PackageId.Equals("DIAView", StringComparison.Ordinal))
+            //对应的是MsiPackage Id="DemoInstaller"
+            if (e.PackageId.Equals("DemoInstaller", StringComparison.Ordinal))
             {
                 State = e.State == PackageState.Present ? InstallState.Present : InstallState.NotPresent;
             }

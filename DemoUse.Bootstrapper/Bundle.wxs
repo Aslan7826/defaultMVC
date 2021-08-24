@@ -5,7 +5,7 @@
 
     <Chain>
       <!-- TODO: Define the list of chained packages. -->
-      <PackageGroupRef Id="WindowsDesktopRuntime31Web"/>
+      <PackageGroupRef Id="AspNetCoreRuntime31Web"/>
       <MsiPackage Id="DemoInstaller" SourceFile="$(var.DemoUse.Installer.TargetDir)DemoUse.Installer.msi"
               Compressed="yes" DisplayInternalUI="yes" Visible="yes" />
     </Chain>
@@ -30,18 +30,9 @@
           Vital="yes"
           Permanent="yes"
           Protocol="burn"
-          DownloadUrl="https://download.visualstudio.microsoft.com/download/pr/a16689d1-0872-4ef9-a592-406d3038d8f7/cf4f84504385a599f0cb6a5c113ccb34/aspnetcore-runtime-3.1.0-win-x64.exe"
+          SourceFile="aspnetcore-runtime-3.1.0-win-x64.exe"
           LogPathVariable="AspNetCoreRuntime31Log"
-          Compressed="no">
-        <!-- heat.exe payload "aspnetcore-runtime-3.1.0-win-x64.exe" -o "aspnetcore-runtime.wxs" -->
-        <RemotePayload
-          CertificatePublicKey="6608A9DBA86701156A4C17CE63BA99BE8B932F8D"
-          CertificateThumbprint="62009AAABDAE749FD47D19150958329BF6FF4B34"
-          Description="Microsoft ASP.NET Core 3.1.0 - Shared Framework"
-          Hash="2DFD4F9EA2E174A7199C40ED3A826886F1E19EF8"
-          ProductName="Microsoft ASP.NET Core 3.1.0 - Shared Framework"
-          Size="7811768"
-          Version="3.1.0.19566" />
+          Compressed="yes">
       </ExePackage>
     </PackageGroup>
   </Fragment>

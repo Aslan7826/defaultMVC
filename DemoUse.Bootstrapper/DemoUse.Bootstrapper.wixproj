@@ -45,6 +45,7 @@
     <Folder Include="DLL" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aspnetcore-runtime-3.1.0-win-x64.exe" />
     <Content Include="DLL\WixUtilExtension.dll" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />

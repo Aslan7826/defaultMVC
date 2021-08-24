@@ -307,7 +307,7 @@ namespace DemoUse.WPFView.ViewModels
             //处理由bootstrapper触发的事件
             WireUpEventHandlers();
             //初始化命令 第一个参数是命令要触发的方法，第二个匿名函数是命令执行的条件
-            InstallCommand = new RelayCommand(param => model.PlanAction(LaunchAction.Install), param => State == InstallState.NotPresent);
+            InstallCommand = new RelayCommand(param => model.PlanAction(LaunchAction.Install), param => true);
 
             UninstallCommand = new RelayCommand(param =>
             {

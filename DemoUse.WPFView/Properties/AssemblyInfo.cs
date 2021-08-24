@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using DemoUse.WPFView;
+using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
+using System.Reflection;
 using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -7,6 +9,8 @@ using System.Windows;
 // 組件的一般資訊是由下列的屬性集控制。
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
+[assembly: BootstrapperApplication(typeof(CustomBootstrapperApplication))]
+
 [assembly: AssemblyTitle("DemoUse.WPFView")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

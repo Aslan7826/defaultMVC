@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" 
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
   <Bundle Name="DemoUse.Bootstrapper" Version="1.0.0.0" Manufacturer="Demo" UpgradeCode="37bbfd2f-0889-4b32-90db-eea5cbea61ce" DisableModify="yes" DisableRemove="yes">
-    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
-
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost" >
+      <Payload SourceFile="$(var.DemoUse.WPFView.TargetDir)DemoUse.WPFView.dll" />
+      <Payload SourceFile="$(var.DemoUse.WPFView.TargetDir)BootstrapperCore.config" />
+    </BootstrapperApplicationRef>
+    <WixVariable Id="WixMbaPrereqLicenseUrl" Value=""/>
+    <WixVariable Id="WixMbaPrereqPackageId" Value=""/>
     <Chain>
-      <!-- TODO: Define the list of chained packages. -->
       <PackageGroupRef Id="AspNetCoreRuntime31Web"/>
       <MsiPackage Id="DemoInstaller" SourceFile="$(var.DemoUse.Installer.TargetDir)DemoUse.Installer.msi"
               Compressed="yes" DisplayInternalUI="yes" Visible="yes" />

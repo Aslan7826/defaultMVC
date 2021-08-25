@@ -13,7 +13,7 @@
     <Chain>
       <PackageGroupRef Id="AspNetCoreRuntime31Web"/>
       <MsiPackage Id="DemoInstaller" SourceFile="$(var.DemoUse.Installer.TargetDir)DemoUse.Installer.msi"
-              Compressed="yes" DisplayInternalUI="yes" Visible="yes" />
+              Compressed="yes" DisplayInternalUI="no" Visible="yes" />
     </Chain>
   </Bundle>
 

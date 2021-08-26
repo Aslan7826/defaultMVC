@@ -40,10 +40,35 @@ namespace MaxPower.NetPro.Setup.WPFView.ViewModels
                 {
                     _installFollder = value;
                     OnPropertyChanged("InstallFollder");
+                    _model.SetBurnVariable("InstallFolder", value);
                 }
             }
         }
 
+        private string _systemIP;
+        public string SystemIP
+        {
+            get => _systemIP;
+            set
+            {
+                _systemIP = value;
+                OnPropertyChanged("SystemIP");
+                _model.SetBurnVariable("SystemIP", value);
+            }
+        }
+
+
+        private string _webPort;
+        public string WebPort
+        {
+            get => _webPort;
+            set
+            {
+                _webPort = value;
+                OnPropertyChanged("WebPort");
+                _model.SetBurnVariable("WebPort", value);
+            }
+        }
 
         public void Browse()
         {

@@ -13,6 +13,7 @@
       <ComponentRef Id="cmp0664ED639015C443993CB8969BD6448E"/>
       <ComponentRef Id="DesktopFolderShortcut" />
       <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="cmpB59C44B238E764B86C6DFC0A8045E3FB"/>
     </Feature>
 
     <UI Id="WixUI_InstallDir">
@@ -135,6 +136,13 @@
               <Permission User="Users" Domain="[LOCAL_MACHINE_NAME]"  GenericRead="yes" Read="yes" ReadAttributes="yes"  GenericExecute="yes" TakeOwnership ="yes"  GenericWrite ="yes"    WriteAttributes="yes" ReadPermission ="yes"   ChangePermission="yes"/>
             </CreateFolder>
           </Component>
+          <!--在機碼註冊安裝位置-->
+          <Component Id="cmpB59C44B238E764B86C6DFC0A8045E3FB" Guid="*">
+            <RegistryKey Id='ChessInfoBarInstallDir' Root='HKLM' Key='Software\[Manufacturer]\[ProductName]' Action='createAndRemoveOnUninstall'>
+              <RegistryValue Type='string' Name='InstallDir' Value="[INSTALLFOLDER]" Action="write" KeyPath="yes" />
+            </RegistryKey>
+          </Component>
+          
           <Directory Id="dir58E8247E2885C01898CAD009F9EFD8BA" Name="runtimes" />
           <Directory Id="dir3D83A529A2122889D4016E7D784625D5" Name="wwwroot" />
         </Directory>

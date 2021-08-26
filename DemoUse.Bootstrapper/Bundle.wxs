@@ -13,7 +13,12 @@
     <Chain>
       <PackageGroupRef Id="AspNetCoreRuntime31Web"/>
       <MsiPackage Id="DemoInstaller" SourceFile="$(var.DemoUse.Installer.TargetDir)DemoUse.Installer.msi"
-              Compressed="yes" DisplayInternalUI="no" Visible="yes" />
+              Compressed="yes" DisplayInternalUI="no" Visible="yes" >
+       <!--抓取內部Dlg 內有定義要拉到WPF引用的參數-->
+        <MsiProperty Name="INSTALLFOLDER" Value="[InstallFolder]"/>
+        <MsiProperty Name="SYSTEMIP" Value="[SystemIP]"/>
+        <MsiProperty Name="WEBPORT" Value="[WebPort]"/>
+      </MsiPackage>
     </Chain>
   </Bundle>
 

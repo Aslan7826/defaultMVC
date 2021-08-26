@@ -1,4 +1,5 @@
 ﻿using DemoUse.WPFView.ViewModels;
+using MaxPower.NetPro.Setup.WPFView.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,15 @@ namespace DemoUse.WPFView.Views
     /// </summary>
     public partial class InstallView : Window
     {
+        SetDataPageViewModel setDataViewModel;
         public InstallView(InstallViewModel viewModel)
         {
             this.InitializeComponent();
             this.DataContext = viewModel;
             this.Closed += (sender, e) =>
             viewModel.CancelCommand.Execute(this);
+            setDataViewModel = new SetDataPageViewModel(viewModel.model);
+
         }
         private void window_MouseMove(object sender, MouseEventArgs e)
         {
@@ -33,6 +37,14 @@ namespace DemoUse.WPFView.Views
             {
                 this.DragMove();
             }
+        }
+        private void StartInstall_Click(object sender, RoutedEventArgs e)
+        {
+            SetDataPage setPage = new SetDataPage(setDataViewModel);
+            setPage.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            setPage.Owner = this;
+            setPage.ShowDialog();
+           
         }
     }
 }

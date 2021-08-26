@@ -45,7 +45,7 @@ namespace DemoUse.WPFView.ViewModels
         /// 需要显示在WPFWindow
         /// </summary>
         private string message;
-        private BootstrapperApplicationModel model;
+        internal BootstrapperApplicationModel model;
         private string _packageId = string.Empty;
         private bool canceled;
         private Dictionary<string, int> executingPackageOrderIndex;
@@ -61,7 +61,6 @@ namespace DemoUse.WPFView.ViewModels
         /// <summary>
         /// 执行安装命令
         /// </summary>
-        public ICommand InstallCommand { get; private set; }
         public ICommand UninstallCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
         public ICommand LaunchNewsCommand { get; private set; }
@@ -307,7 +306,6 @@ namespace DemoUse.WPFView.ViewModels
             //处理由bootstrapper触发的事件
             WireUpEventHandlers();
             //初始化命令 第一个参数是命令要触发的方法，第二个匿名函数是命令执行的条件
-            InstallCommand = new RelayCommand(param => model.PlanAction(LaunchAction.Install), param => true);
 
             UninstallCommand = new RelayCommand(param =>
             {

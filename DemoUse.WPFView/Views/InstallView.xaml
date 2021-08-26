@@ -47,7 +47,7 @@
                 </Grid>
             </Button>
 
-            <Button Grid.Row="1" Grid.Column="0" Command="{Binding InstallCommand}" Style="{StaticResource btn-function}">
+            <Button Grid.Row="1" Grid.Column="0" Click="StartInstall_Click"  Style="{StaticResource btn-function}">
                 <Grid Width="125" Height="125">
                     <Image Height="50" Source="{ StaticResource cog_solidDrawingImage }"/>
                     <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="開始安裝"/>

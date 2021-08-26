@@ -1,4 +1,5 @@
-﻿using DemoUse.WPFView.Models;
+﻿using DemoUse.CustomAction;
+using DemoUse.WPFView.Models;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace MaxPower.NetPro.Setup.WPFView.ViewModels
         {
             _model = model;
             InstallFollder = @"C:\Program Files (x86)\DemoUse";
+            SystemIP = new GetLocalData().GetThisIP();
             InstallCommand = new RelayCommand(param => Install(), param => true);
             SelectedFolderCommand = new RelayCommand(param => Browse(), param => true);
         }

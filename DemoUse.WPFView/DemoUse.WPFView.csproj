@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="CustomBootstrapperApplication.cs" />
     <Compile Include="Models\BootstrapperApplicationModel.cs" />
+    <Compile Include="Models\Enums\InstallState.cs" />
     <Compile Include="Models\PropertyNotifyBase.cs" />
     <Compile Include="Models\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

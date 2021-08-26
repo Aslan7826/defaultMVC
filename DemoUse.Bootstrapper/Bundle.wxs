@@ -7,6 +7,7 @@
     <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost" >
       <Payload SourceFile="$(var.DemoUse.WPFView.TargetDir)DemoUse.WPFView.dll" />
       <Payload SourceFile="$(var.DemoUse.WPFView.TargetDir)BootstrapperCore.config" />
+       <Payload SourceFile="$(var.DemoUse.WPFView.TargetDir)DemoUse.CustomAction.dll" />
     </BootstrapperApplicationRef>
     <WixVariable Id="WixMbaPrereqLicenseUrl" Value=""/>
     <WixVariable Id="WixMbaPrereqPackageId" Value=""/>

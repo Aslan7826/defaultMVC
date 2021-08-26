@@ -34,12 +34,7 @@ namespace DemoUse.CustomAction
         [CustomAction]
         public static ActionResult GetThisIP(Session session) 
         {
-            string name = Dns.GetHostName();
-            var ip = Dns.GetHostEntry(name).AddressList
-                    .ToList()
-                    .Where(o => o.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork && !o.ToString().EndsWith(".1"))
-                    .FirstOrDefault()?.ToString() ?? "127.0.0.1";
-            session["SYSTEMIP"] = ip;
+            session["SYSTEMIP"] = new GetLocalData().GetThisIP();
             return ActionResult.Success;
         }
 

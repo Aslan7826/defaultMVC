@@ -1,4 +1,5 @@
 ﻿using DemoUse.WPFView.Models;
+using DemoUse.WPFView.Models.Enums;
 using Microsoft.TeamFoundation.Common.Internal;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using System;
@@ -14,32 +15,11 @@ namespace DemoUse.WPFView.ViewModels
 {
   public class InstallViewModel : PropertyNotifyBase
     {
-        public enum InstallState
-        {
-            Initializing,
-            Present,
-            NotPresent,
-            Applying,
-            Cancelled,
-            Applied,
-            Failed,
-        }
-
-        public enum UpdateState
-        {
-            Unknown,
-            Initializing,
-            Checking,
-            Current,
-            Available,
-            Failed,
-        }
 
         /// <summary>
         /// 记录状态
         /// </summary>
         private InstallState state;
-        public UpdateState updatestate;
 
         /// <summary>
         /// 需要显示在WPFWindow
@@ -54,7 +34,6 @@ namespace DemoUse.WPFView.ViewModels
         private int cacheProgress;
         private int executeProgress;
         private Version _version = new Version("2.0.0.0");
-        private bool _installEnabled;
         private int progressPhases=1;
         private bool isUnstalling=false;
         #region Command
@@ -327,31 +306,7 @@ namespace DemoUse.WPFView.ViewModels
             }, param => State != InstallState.Cancelled);
 
 
-            model.BootstrapperApplication.DetectComplete += DetectComplete;
 
-
-
-
-            //进度条相关事件绑定
-            //this.model.BootstrapperApplication.CacheAcquireProgress +=
-            //(sender, args) =>
-            //{
-            //    this.cacheProgress = args.OverallPercentage;
-            //    this.Progress = (this.cacheProgress + this.executeProgress) / 2;
-            //};
-            //this.model.BootstrapperApplication.ExecuteProgress +=
-            //(sender, args) =>
-            //{
-            //    this.executeProgress = args.OverallPercentage;
-            //    this.Progress = (this.cacheProgress + this.executeProgress) / 2;
-            //};
-            model.BootstrapperApplication.CacheAcquireProgress += CacheAcquireProgress;
-            model.BootstrapperApplication.ExecuteProgress += ApplyExecuteProgress;
-            model.BootstrapperApplication.ExecuteMsiMessage += ExecuteMsiMessage;
-            model.BootstrapperApplication.PlanBegin += PlanBegin;
-            model.BootstrapperApplication.PlanPackageComplete += PlanPackageComplete;
-            model.BootstrapperApplication.Progress += ApplyProgress;
-            model.BootstrapperApplication.CacheComplete += CacheComplete;
         }
 
         #endregion
@@ -583,18 +538,34 @@ namespace DemoUse.WPFView.ViewModels
         /// </summary>
         private void WireUpEventHandlers()
         {
-            model.BootstrapperApplication.DetectPackageComplete += DetectPackageComplete;
-
-            model.BootstrapperApplication.PlanComplete += PlanComplete;
-
-            model.BootstrapperApplication.ApplyComplete += ApplyComplete;
-
-            model.BootstrapperApplication.ApplyBegin += ApplyBegin;
-
-            model.BootstrapperApplication.ExecutePackageBegin += ExecutePackageBegin;
-
-            model.BootstrapperApplication.ExecutePackageComplete += ExecutePackageComplete;
-
+            //25 當引擎開始計劃安裝時觸發
+           model.BootstrapperApplication.PlanBegin += PlanBegin;
+            //26 當檢測階段完成時觸發。
+           model.BootstrapperApplication.DetectComplete += DetectComplete;
+            //27 當對特定包的檢測完成時觸發。
+           model.BootstrapperApplication.DetectPackageComplete += DetectPackageComplete;
+            //30 當引擎完成特定包的安裝規劃時觸發
+           model.BootstrapperApplication.PlanPackageComplete += PlanPackageComplete;
+            //43 當引擎完成安裝規劃時觸發。
+           model.BootstrapperApplication.PlanComplete += PlanComplete;
+            //44 當引擎開始安裝包時觸發。
+           model.BootstrapperApplication.ApplyBegin += ApplyBegin;
+            //46 當引擎完成安裝特定包時觸發。
+           model.BootstrapperApplication.ExecutePackageComplete += ExecutePackageComplete;
+            //48 當 Windows Installer 發送安裝消息時觸發
+           model.BootstrapperApplication.ExecuteMsiMessage += ExecuteMsiMessage;
+            //49 當引擎更改捆綁安裝的進度時觸發。
+           model.BootstrapperApplication.Progress += ApplyProgress;
+            //52 當引擎開始安裝特定包時觸發。
+           model.BootstrapperApplication.ExecutePackageBegin += ExecutePackageBegin;
+            //54 在引擎緩存安裝源後觸發
+           model.BootstrapperApplication.CacheComplete += CacheComplete;
+            //60 當引擎有進度獲取安裝源時觸發
+           model.BootstrapperApplication.CacheAcquireProgress += CacheAcquireProgress;
+            //73 在有效載荷上執行時由引擎觸發。
+           model.BootstrapperApplication.ExecuteProgress += ApplyExecuteProgress;
+            //74 當引擎完成安裝包時觸發。
+           model.BootstrapperApplication.ApplyComplete += ApplyComplete;
         }
         #endregion                           
     }

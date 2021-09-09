@@ -22,6 +22,7 @@
     <Compile Include="HeatFile.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="SettingDlg.wxs" />
+    <Compile Include="UIPage.wxs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DemoHelloWorld\" />

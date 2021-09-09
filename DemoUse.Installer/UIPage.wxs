@@ -59,5 +59,6 @@
 
     <UIRef Id="WixUI_Common" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <ComponentGroup Id="UIPage"/>
 	</Fragment>
 </Wix>

@@ -9,6 +9,7 @@
     <Feature Id="ProductFeature" Title="DemoUse.Installer" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="cmpB59C44B238E764B86C6DFC0A8045E3FA" />
+      <ComponentGroupRef Id="UIPage"/>
     </Feature>
 
    

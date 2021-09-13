@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+
+    <Style x:Key="btn-function" TargetType="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="#78A9B4"/>
+        <Setter Property="Foreground" Value="#FFFDFD"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="2">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#193F48"/>
+                <Setter Property="BorderBrush"  Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="btn-main" TargetType="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="#193F48"/>
+        <Setter Property="Foreground" Value="#FFFDFD"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="2">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#193F48"/>
+                <Setter Property="BorderBrush"  Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+
+   <DrawingImage x:Key="door_open_solidDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H640 V0 H0 Z">
+                <GeometryDrawing Brush="#FFFDFD" Geometry="F1 M640,512z M0,0z M624,448L544,448 544,113.45C544,86.19,522.47,64,496,64L384,64 384,128 480,128 480,512 624,512C632.84,512,640,504.84,640,496L640,464C640,455.16,632.84,448,624,448z M312.24,1.01L120.24,50.75C105.99,54.44,96,67.7,96,82.92L96,448 16,448C7.16,448,0,455.16,0,464L0,496C0,504.84,7.16,512,16,512L352,512 352,33.18C352,11.6,332.44,-4.23,312.24,1.01z M264,288C250.75,288 240,273.67 240,256 240,238.33 250.75,224 264,224 277.25,224 288,238.33 288,256 288,273.67 277.25,288 264,288z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="cog_solidDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <GeometryDrawing Brush="#FFFDFD" Geometry="F1 M512,512z M0,0z M487.4,315.7L444.8,291.1C449.1,267.9,449.1,244.1,444.8,220.9L487.4,196.3C492.3,193.5 494.5,187.7 492.9,182.3 481.8,146.7 462.9,114.5 438.2,87.7 434.4,83.6 428.2,82.6 423.4,85.4L380.8,110C362.9,94.6,342.3,82.7,320,74.9L320,25.8C320,20.2 316.1,15.3 310.6,14.1 273.9,5.9 236.3,6.3 201.4,14.1 195.9,15.3 192,20.2 192,25.8L192,75C169.8,82.9,149.2,94.8,131.2,110.1L88.7,85.5C83.8,82.7 77.7,83.6 73.9,87.8 49.2,114.5 30.3,146.7 19.2,182.4 17.5,187.8 19.8,193.6 24.7,196.4L67.3,221C63,244.2,63,268,67.3,291.2L24.7,315.8C19.8,318.6 17.6,324.4 19.2,329.8 30.3,365.4 49.2,397.6 73.9,424.4 77.7,428.5 83.9,429.5 88.7,426.7L131.3,402.1C149.2,417.5,169.8,429.4,192.1,437.2L192.1,486.4C192.1,492 196,496.9 201.5,498.1 238.2,506.3 275.8,505.9 310.7,498.1 316.2,496.9 320.1,492 320.1,486.4L320.1,437.2C342.3,429.3,362.9,417.4,380.9,402.1L423.5,426.7C428.4,429.5 434.5,428.6 438.3,424.4 463,397.7 481.9,365.5 493,329.8 494.5,324.3 492.3,318.5 487.4,315.7z M256,336C211.9,336 176,300.1 176,256 176,211.9 211.9,176 256,176 300.1,176 336,211.9 336,256 336,300.1 300.1,336 256,336z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="address_card_regularDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H576 V0 H0 Z">
+                <GeometryDrawing Brush="#FFFDFD" Geometry="F1 M576,512z M0,0z M528,32L48,32C21.5,32,0,53.5,0,80L0,432C0,458.5,21.5,480,48,480L528,480C554.5,480,576,458.5,576,432L576,80C576,53.5,554.5,32,528,32z M528,432L48,432 48,80 528,80 528,432z M208,256C243.3,256 272,227.3 272,192 272,156.7 243.3,128 208,128 172.7,128 144,156.7 144,192 144,227.3 172.7,256 208,256z M118.4,384L297.6,384C310,384,320,375.4,320,364.8L320,345.6C320,313.8 289.9,288 252.8,288 242,288 234.1,296 208,296 181.1,296 174.6,288 163.2,288 126.1,288 96,313.8 96,345.6L96,364.8C96,375.4,106,384,118.4,384z M360,320L472,320C476.4,320,480,316.4,480,312L480,296C480,291.6,476.4,288,472,288L360,288C355.6,288,352,291.6,352,296L352,312C352,316.4,355.6,320,360,320z M360,256L472,256C476.4,256,480,252.4,480,248L480,232C480,227.6,476.4,224,472,224L360,224C355.6,224,352,227.6,352,232L352,248C352,252.4,355.6,256,360,256z M360,192L472,192C476.4,192,480,188.4,480,184L480,168C480,163.6,476.4,160,472,160L360,160C355.6,160,352,163.6,352,168L352,184C352,188.4,355.6,192,360,192z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

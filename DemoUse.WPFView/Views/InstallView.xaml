@@ -5,17 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoUse.WPFView.Views"
         mc:Ignorable="d"
-        Title="InstallView" Height="450" Width="800">
-  <Grid>
-          <StackPanel>
-            <Label Content="{Binding Message}" />
-            <Button Command="{Binding InstallCommand}">Install</Button>
-            <Button Command="{Binding UninstallCommand}">Uninstall</Button>
-            <Button Command="{Binding CancelCommand}">Cancel</Button>
-            <Label VerticalAlignment="Center">Progress:</Label>
-            <Label Content="{Binding Progress}" />
-            <ProgressBar Width="200" Height="30" Value="{Binding Progress}" Minimum="0" Maximum="100" />
+           MaxHeight="430" MinHeight="430" Height="430" 
+             MaxWidth="430" MinWidth="430" Width="430" 
+             WindowStyle="None" AllowsTransparency="True" 
+             Background="{x:Null}" ResizeMode="NoResize" MouseMove="window_MouseMove">
+    <Window.Resources>
+        <ResourceDictionary Source="StyleDictionary.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid >
+        <StackPanel Opacity="0.45">
+            <StackPanel.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#D3D0B4" Offset="1"/>
+                    <GradientStop Color="#FFFFFDFD" Offset="0.2"/>
+                </RadialGradientBrush>
+            </StackPanel.Background>
         </StackPanel>
-    </Grid>
+        <Grid VerticalAlignment="Stretch" Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Style="{StaticResource btn-main}">
+                <Grid Width="260" Height="125">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Aslan" />
+                    <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="v1.1.0"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" IsHitTestVisible="False">Hello</TextBlock>
+                </Grid>
+            </Button>
 
+            <Button Grid.Column="0" Style="{StaticResource btn-function}">
+                <Grid Width="125" Height="125">
+                    <Image Height="50" Source="{ StaticResource address_card_regularDrawingImage }"/>
+                    <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="系統授權書"  />
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="0" Command="{Binding InstallCommand}" Style="{StaticResource btn-function}">
+                <Grid Width="125" Height="125">
+                    <Image Height="50" Source="{ StaticResource cog_solidDrawingImage }"/>
+                    <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="開始安裝"/>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Style="{StaticResource btn-main}">
+                <Grid>
+                    <ProgressBar Margin="0" Width="262" Height="262" Orientation="Vertical" Value="{Binding Progress}" Maximum="100" BorderBrush="{x:Null}" Foreground="#35626C" Background="{x:Null}" />
+                    <TextBlock Foreground="#FFFDFD"></TextBlock>
+                </Grid>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="0" Command="{Binding CancelCommand}" Style="{StaticResource btn-function}">
+                <Grid Width="125" Height="125">
+                    <Image Height="50" Source="{ StaticResource door_open_solidDrawingImage }"/>
+                    <TextBlock Text="離開" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                </Grid>
+            </Button>
+
+            <!--<Button Command="{Binding UninstallCommand}" Margin="0,0,296,0">Uninstall</Button> -->
+        </Grid>
+        <TextBlock Text="{Binding Message}" Foreground="#193F48" Margin="0,0,0,0" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+        <TextBlock Text="{Binding Progress}" Foreground="#193F48" Margin="0,0,4,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+
+    </Grid>
 </Window>

@@ -27,5 +27,12 @@ namespace DemoUse.WPFView.Views
             this.Closed += (sender, e) =>
             viewModel.CancelCommand.Execute(this);
         }
+        private void window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
     }
 }

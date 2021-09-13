@@ -1,4 +1,5 @@
-﻿using DemoUse.WPFView.ViewModels;
+﻿using DemoUse.WPFView.Models;
+using DemoUse.WPFView.ViewModels;
 using MaxPower.NetPro.Setup.WPFView.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,14 @@ namespace DemoUse.WPFView.Views
     public partial class InstallView : Window
     {
         SetDataPageViewModel setDataViewModel;
-        public InstallView(InstallViewModel viewModel)
+        public InstallView(BootstrapperApplicationModel bootstrapper)
         {
             this.InitializeComponent();
-            this.DataContext = viewModel;
+            var vm = new InstallViewModel(bootstrapper);
+            this.DataContext = vm;
             this.Closed += (sender, e) =>
-            viewModel.CancelCommand.Execute(this);
-            setDataViewModel = new SetDataPageViewModel(viewModel.model);
+            vm.CancelCommand.Execute(this);
+            setDataViewModel = new SetDataPageViewModel(bootstrapper);
 
         }
         private void window_MouseMove(object sender, MouseEventArgs e)
@@ -45,6 +47,14 @@ namespace DemoUse.WPFView.Views
             setPage.Owner = this;
             setPage.ShowDialog();
            
+        }
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var thisTextBox = (TextBox)sender;
+            if (thisTextBox.LineCount != -1)
+            {
+                thisTextBox.ScrollToLine(thisTextBox.LineCount - 1);
+            }
         }
     }
 }

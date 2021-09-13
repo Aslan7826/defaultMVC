@@ -13,22 +13,21 @@ namespace DemoUse.WPFView
 {
     public class CustomBootstrapperApplication :BootstrapperApplication
     {
-        public static Dispatcher Dispatcher { get; set; }
-        static public DiaViewModel Model { get; private set; }
-        static public InstallView View { get; private set; }
 
         protected override void Run()
         {
-            Model = new DiaViewModel(this);
-            Dispatcher = Dispatcher.CurrentDispatcher;
-            var model = new BootstrapperApplicationModel(this);
-            var viewModel = new InstallViewModel(model);
-            View = new InstallView(viewModel);
-            model.SetWindowHandle(View);
+            var bootstrapper = new BootstrapperApplicationModel(this)
+            {
+                Version = new Version("1.0.0")
+            };
+            var View = new InstallView(bootstrapper);
+
+            bootstrapper.HanlderStart();
+            bootstrapper.SetWindowHandle(View);
             this.Engine.Detect();
             View.Show();
             Dispatcher.Run();
-            this.Engine.Quit(model.FinalResult);
+            this.Engine.Quit(bootstrapper.FinalResult);
         }
     }
 }

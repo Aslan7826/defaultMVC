@@ -35,7 +35,7 @@
             <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Style="{StaticResource btn-main}">
                 <Grid Width="260" Height="125">
                     <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Aslan" />
-                    <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="v1.1.0"/>
+                    <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="{Binding Version}"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" IsHitTestVisible="False">Hello</TextBlock>
                 </Grid>
             </Button>
@@ -57,7 +57,7 @@
             <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Style="{StaticResource btn-main}">
                 <Grid>
                     <ProgressBar Margin="0" Width="262" Height="262" Orientation="Vertical" Value="{Binding Progress}" Maximum="100" BorderBrush="{x:Null}" Foreground="#35626C" Background="{x:Null}" />
-                    <TextBlock Foreground="#FFFDFD"></TextBlock>
+                    <TextBox  TextChanged="TextBox_TextChanged" Text="{Binding AllMessage}" Foreground="#FFFDFD"  Background="{x:Null}" ></TextBox>
                 </Grid>
             </Button>
 

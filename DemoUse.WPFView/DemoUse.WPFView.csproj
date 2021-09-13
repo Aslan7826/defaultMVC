@@ -65,6 +65,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -98,8 +99,12 @@
     </Compile>
     <Compile Include="ViewModels\DiaViewModel.cs" />
     <Compile Include="ViewModels\InstallViewModel.cs" />
+    <Compile Include="ViewModels\SetDataPageViewModel.cs" />
     <Compile Include="Views\InstallView.xaml.cs">
       <DependentUpon>InstallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SetDataPage.xaml.cs">
+      <DependentUpon>SetDataPage.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\InstallView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SetDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

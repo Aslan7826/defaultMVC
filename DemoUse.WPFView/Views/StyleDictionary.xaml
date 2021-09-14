@@ -22,7 +22,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <Style x:Key="btn-main" TargetType="{x:Type Button}">
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Background" Value="#193F48"/>
@@ -73,15 +73,15 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
-    
-      <DrawingImage x:Key="folder_regularDrawingImage">
+
+    <DrawingImage x:Key="folder_regularDrawingImage">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
                 <GeometryDrawing Brush="Gray" Geometry="F1 M512,512z M0,0z M464,128L272,128 217.37,73.37C211.37,67.37,203.23,64,194.74,64L48,64C21.49,64,0,85.49,0,112L0,400C0,426.51,21.49,448,48,448L464,448C490.51,448,512,426.51,512,400L512,176C512,149.49,490.51,128,464,128z M464,400L48,400 48,112 188.12,112 242.75,166.63C248.75,172.63,256.89,176,265.38,176L464,176 464,400z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
-        <DrawingImage x:Key="folder_open_regularDrawingImage">
+    <DrawingImage x:Key="folder_open_regularDrawingImage">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="M0,0 V512 H576 V0 H0 Z">
                 <GeometryDrawing Brush="Gray" Geometry="F1 M576,512z M0,0z M527.9,224L480,224 480,176C480,149.5,458.5,128,432,128L272,128 208,64 48,64C21.5,64,0,85.5,0,112L0,400C0,426.5,21.5,448,48,448L448,448C464.5,448,479.9,439.5,488.7,425.4L568.6,297.4C588.6,265.5,565.6,224,527.9,224z M48,118C48,114.7,50.7,112,54,112L188.1,112 252.1,176 426,176C429.3,176,432,178.7,432,182L432,224 152,224C135.2,224,119.6,232.8,110.9,247.2L48,351.4z M448,400L72,400 149.2,272 528,272z" />
@@ -95,5 +95,24 @@
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
-
+    <DrawingImage x:Key="tools_solidDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="0.04999995231628418" Y="0" />
+                </DrawingGroup.Transform>
+                <GeometryDrawing Brush="#FFFDFD" Geometry="F1 M512,512z M0,0z M501.1,395.7L384,278.6C360.9,255.5,326.4,251,298.6,264.7L192,158.1 192,96 64,0 0,64 96,192 158.1,192 264.7,298.6C251.1,326.4,255.5,360.9,278.6,384L395.7,501.1C410.3,515.7,433.9,515.7,448.4,501.1L501.1,448.4C515.6,433.8,515.6,410.2,501.1,395.7z M331.7,225C360,225,386.6,236,406.6,256L426,275.4C441.8,268.5 456.8,258.9 469.8,245.9 506.9,208.8 519.5,156.6 507.7,109.2 505.5,100.2 494.2,97.1 487.6,103.7L413.2,178.1 345.3,166.8 334,98.9 408.4,24.5C415,17.9 411.8,6.6 402.7,4.3 355.3,-7.4 303.1,5.2 266.1,42.2 237.6,70.7 224.2,108.3 224.9,145.8L307,227.9C315.1,226,323.5,225,331.7,225z M227.8,307L171.1,250.3 18.7,402.8C-6.3,427.8 -6.3,468.3 18.7,493.3 43.7,518.3 84.2,518.3 109.2,493.3L232.8,369.7C225.2,349.8,222.9,328.1,227.8,307z M64,472C50.8,472 40,461.2 40,448 40,434.7 50.7,424 64,424 77.3,424 88,434.7 88,448 88,461.2 77.3,472 64,472z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="trash_alt_regularDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H448 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="0" Y="5.457294264488155E-06" />
+                </DrawingGroup.Transform>
+                <GeometryDrawing Brush="#FFFDFD" Geometry="F1 M448,512z M0,0z M268,416L292,416A12,12,0,0,0,304,404L304,188A12,12,0,0,0,292,176L268,176A12,12,0,0,0,256,188L256,404A12,12,0,0,0,268,416z M432,80L349.59,80 315.59,23.3A48,48,0,0,0,274.41,0L173.59,0A48,48,0,0,0,132.43,23.3L98.41,80 16,80A16,16,0,0,0,0,96L0,112A16,16,0,0,0,16,128L32,128 32,464A48,48,0,0,0,80,512L368,512A48,48,0,0,0,416,464L416,128 432,128A16,16,0,0,0,448,112L448,96A16,16,0,0,0,432,80z M171.84,50.91A6,6,0,0,1,177,48L271,48A6,6,0,0,1,276.15,50.91L293.61,80 154.39,80z M368,464L80,464 80,128 368,128z M156,416L180,416A12,12,0,0,0,192,404L192,188A12,12,0,0,0,180,176L156,176A12,12,0,0,0,144,188L144,404A12,12,0,0,0,156,416z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
 </ResourceDictionary>

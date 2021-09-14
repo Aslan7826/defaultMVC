@@ -1,10 +1,8 @@
 ﻿using DemoUse.WPFView.Models;
 using DemoUse.WPFView.Models.Enums;
-using Microsoft.TeamFoundation.Common.Internal;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,22 +11,42 @@ using System.Windows.Input;
 
 namespace DemoUse.WPFView.ViewModels
 {
-    public class InstallViewModel : PropertyNotifyBase
+    public class RevisionViewModel : PropertyNotifyBase
     {
         /// <summary>
         /// 需要显示在WPFWindow
         /// </summary>
+
         internal BootstrapperApplicationModel _Model;
 
-        #region 构造函数
+
+
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="model"></param>
-        public InstallViewModel(BootstrapperApplicationModel model)
+        public RevisionViewModel(BootstrapperApplicationModel model)
         {
             this._Model = model;
             this._Model.DataHandler += DataChangeShow;
+
+            UninstallCommand = new RelayCommand(param =>
+            {
+                if (System.Windows.MessageBox.Show("確定狠心移除嗎？", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    _Model.isUnstalling = true;
+                    _Model.PlanAction(LaunchAction.Uninstall);
+                }
+            }, param => State == InstallState.Present);
+            RepairCommand = new RelayCommand(param =>
+            {
+
+                if (System.Windows.MessageBox.Show("即將進入系統修復？", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    _Model.PlanAction(LaunchAction.Repair);
+                }
+            }
+             , param => State == InstallState.Present);
 
             CancelCommand = new RelayCommand(param =>
             {
@@ -42,24 +60,16 @@ namespace DemoUse.WPFView.ViewModels
                     model.Dispatcher.InvokeShutdown();
                 }
             }, param => State != InstallState.Cancelled);
-
-
-
         }
-
-        #endregion
 
 
         #region Command
 
+        public ICommand UninstallCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
-
+        public ICommand RepairCommand { get; private set; }
 
         #endregion
-
-        #region 属性
-
-        public bool InstallEnabled => state == InstallState.NotPresent;
         /// <summary>
         /// 版本
         /// </summary>
@@ -111,11 +121,9 @@ namespace DemoUse.WPFView.ViewModels
                 {
                     state = value;
                     OnPropertyChanged("State");
-                    OnPropertyChanged("InstallEnabled");
                 }
             }
         }
-
 
         private int progress;
         public int Progress
@@ -132,8 +140,6 @@ namespace DemoUse.WPFView.ViewModels
             }
         }
 
-
-        #endregion
         public void DataChangeShow(object obj, BootstrapperEventArgs args)
         {
             AllMessage = args.AllMessage;
@@ -141,10 +147,5 @@ namespace DemoUse.WPFView.ViewModels
             Message = args.Message;
             State = args.State;
         }
-
-
-
-
     }
-
 }

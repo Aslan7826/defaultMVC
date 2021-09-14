@@ -101,9 +101,13 @@
     </Compile>
     <Compile Include="ViewModels\DiaViewModel.cs" />
     <Compile Include="ViewModels\InstallViewModel.cs" />
+    <Compile Include="ViewModels\RevisionViewModel.cs" />
     <Compile Include="ViewModels\SetDataPageViewModel.cs" />
     <Compile Include="Views\InstallView.xaml.cs">
       <DependentUpon>InstallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RevisionView.xaml.cs">
+      <DependentUpon>RevisionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SetDataPage.xaml.cs">
       <DependentUpon>SetDataPage.xaml</DependentUpon>
@@ -133,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\InstallView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RevisionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -35,14 +35,8 @@ namespace DemoUse.WPFView.Models
             BootstrapperApplication = bootstrapperApplication;
             executingPackageOrderIndex = new Dictionary<string, int>();
             _BootstrapperEventArgs = new BootstrapperEventArgs();
+            EventHandlers();
         }
-
-        public void HanlderStart()
-        {
-            State = InstallState.Initializing;
-            WireUpEventHandlers();
-        }
-
         public BootstrapperApplication BootstrapperApplication
         {
             get;
@@ -55,6 +49,8 @@ namespace DemoUse.WPFView.Models
 
         public void SetWindowHandle(Window view)
         {
+            //重新發送狀態給沒監聽到的視窗
+            State = State;
             hwnd = new WindowInteropHelper(view).Handle;
         }
         /// <summary>
@@ -83,16 +79,16 @@ namespace DemoUse.WPFView.Models
             BootstrapperApplication.Engine.StringVariables[variableName] = value;
         }
         /// <summary>
-        /// 事件订阅
-        /// </summar>
-        private void WireUpEventHandlers()
+        /// 系統檢測
+        /// </summary>
+        private void EventHandlers()
         {
-            //25 當引擎開始計劃安裝時觸發
-            BootstrapperApplication.PlanBegin += PlanBegin;
             //26 當檢測階段完成時觸發。
             BootstrapperApplication.DetectComplete += DetectComplete;
             //27 當對特定包的檢測完成時觸發。
             BootstrapperApplication.DetectPackageComplete += DetectPackageComplete;
+            //25 當引擎開始計劃安裝時觸發
+            BootstrapperApplication.PlanBegin += PlanBegin;
             //30 當引擎完成特定包的安裝規劃時觸發
             BootstrapperApplication.PlanPackageComplete += PlanPackageComplete;
             //43 當引擎完成安裝規劃時觸發。
@@ -122,19 +118,22 @@ namespace DemoUse.WPFView.Models
         private int cacheProgress;
         private int executeProgress;
         private int progressPhases = 1;
-        private InstallState _state;
+        private InstallState _state = InstallState.Initializing;
         /// <summary>
         /// 版本
         /// </summary>
         public Version Version { get; set; }
-        private InstallState State
+        public InstallState State
         {
             get => _state;
             set
             {
                 _state = value;
-                _BootstrapperEventArgs.StateChange(_state);
-                DataHandler(this, _BootstrapperEventArgs);
+                if (DataHandler != null)
+                {
+                    _BootstrapperEventArgs.StateChange(_state);
+                    DataHandler(this, _BootstrapperEventArgs);
+                }
 
             }
         }
@@ -146,8 +145,11 @@ namespace DemoUse.WPFView.Models
             set
             {
                 _msg = value;
-                _BootstrapperEventArgs.MessageChange(_msg);
-                DataHandler(this, _BootstrapperEventArgs);
+                if (DataHandler != null)
+                {
+                    _BootstrapperEventArgs.MessageChange(_msg);
+                    DataHandler(this, _BootstrapperEventArgs);
+                }
             }
         }
         private string _amsg;
@@ -157,8 +159,11 @@ namespace DemoUse.WPFView.Models
             set
             {
                 _amsg += value;
-                _BootstrapperEventArgs.AllMessageChange(_amsg);
-                DataHandler(this, _BootstrapperEventArgs);
+                if (DataHandler != null)
+                {
+                    _BootstrapperEventArgs.AllMessageChange(_amsg);
+                    DataHandler(this, _BootstrapperEventArgs);
+                }
             }
         }
 
@@ -170,8 +175,11 @@ namespace DemoUse.WPFView.Models
             set
             {
                 _progress = isUnstalling ? value * 2 : value;
-                _BootstrapperEventArgs.ProgressChange(_progress);
-                DataHandler(this, _BootstrapperEventArgs);
+                if (DataHandler != null)
+                {
+                    _BootstrapperEventArgs.ProgressChange(_progress);
+                    DataHandler(this, _BootstrapperEventArgs);
+                }
             }
         }
         private bool Canceled;
@@ -227,6 +235,10 @@ namespace DemoUse.WPFView.Models
             if (e.PackageId.Equals("DemoInstaller", StringComparison.Ordinal))
             {
                 State = e.State == PackageState.Present ? InstallState.Present : InstallState.NotPresent;
+            }
+            else 
+            {
+                State = InstallState.NotPresent;
             }
         }
         /// <summary>
@@ -374,16 +386,22 @@ namespace DemoUse.WPFView.Models
             FinalResult = e.Status;
             AddAllMessage(false);
             Message = string.Empty;
-            AllMessage = isUnstalling ? "\n卸載完成" : "\n安裝完成";
+            if (isUnstalling) 
+            { 
+                AllMessage = "\n卸載完成";
+                State = InstallState.NotPresent; 
+            }
+            else
+            {
+                AllMessage = "\n安裝完成";
+                State = InstallState.Present;
+            }
             isUnstalling = false;
-            State = InstallState.Applied;
-            //OnPropertyChanged("InstallEnabled", "UninstallEnabled", "RepairEnabled");
-
             //Dispatcher.InvokeShutdown();
         }
         private void AddAllMessage(bool run)
         {
-            
+
             if (timer is null)
             {
                 timer = new Timer(500);
@@ -401,7 +419,18 @@ namespace DemoUse.WPFView.Models
             {
                 timer.Stop();
             }
-            
+
+        }
+
+        /// <summary>
+        /// 等待探測完成
+        /// </summary>
+        public void WaitDetect() 
+        {
+            while(State == InstallState.Initializing) 
+            {
+                System.Threading.Thread.Sleep(1000);
+            }
         }
     }
 }

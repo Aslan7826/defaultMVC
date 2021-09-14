@@ -6,7 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace DemoUse.WPFView
@@ -20,11 +22,13 @@ namespace DemoUse.WPFView
             {
                 Version = new Version("1.0.0")
             };
-            var View = new InstallView(bootstrapper);
-
-            bootstrapper.HanlderStart();
-            bootstrapper.SetWindowHandle(View);
             this.Engine.Detect();
+            bootstrapper.WaitDetect();
+            var View = bootstrapper.State == Models.Enums.InstallState.Present
+                     ? (Window)new RevisionView(bootstrapper)
+                     :  new InstallView(bootstrapper)
+                     ;
+            bootstrapper.SetWindowHandle(View);
             View.Show();
             Dispatcher.Run();
             this.Engine.Quit(bootstrapper.FinalResult);
